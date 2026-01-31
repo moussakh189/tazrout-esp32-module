@@ -33,7 +33,7 @@ Quick Start
 
 ## Documentation
 
-- [Development Plan](docs/TAZROUT_ESP32_Development_Plan.pdf)
+- [Development Plan](docs/TAZROUT-ESP32-Development_Plan.pdf)
 - [Week-by-Week Progress](docs/PROGRESS.md)
 - [API Documentation](docs/api/README.md) *(Coming soon)*
 
