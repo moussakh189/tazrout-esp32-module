@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "KHENFRI Moussa - TAZROUT Project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": -67.2,
+      "left": 105.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_yellow",
+      "top": -28.8,
+      "left": 105.4,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 9.6,
+      "left": 105.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 10.55,
+      "left": 86.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 48.95,
+      "left": 86.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 87.35,
+      "left": 86.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led_green:A", "esp:D14", "green", [ "v0" ] ],
+    [ "led_green:C", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led_yellow:A", "esp:D12", "yellow", [ "v0" ] ],
+    [ "led_yellow:C", "r2:1", "yellow", [ "v0" ] ],
+    [ "r2:2", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led_red:A", "esp:D13", "red", [ "v0" ] ],
+    [ "led_red:C", "r3:1", "red", [ "v0" ] ],
+    [ "r3:2", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

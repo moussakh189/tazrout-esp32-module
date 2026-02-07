@@ -27,7 +27,7 @@ tazrout-esp32-module/
 ├── examples/      # Example code and tutorials
 └── assets/        # Images, diagrams, videos
 
-
+`
 Quick Start
 
 
