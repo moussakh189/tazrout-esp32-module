@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "author": "KHENFRI Moussa - TAZROUT Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "moisture",
+      "top": -76.8,
+      "left": 182.4,
+      "attrs": {
+        "value": "50"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_dry",
+      "top": 28.8,
+      "left": 182.4,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_optimal",
+      "top": 67.2,
+      "left": 182.4,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_wet",
+      "top": 105.6,
+      "left": 182.4,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 87.55,
+      "left": 144,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 126.15,
+      "left": 144,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 164.75,
+      "left": 144,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "moisture:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "moisture:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "moisture:SIG", "esp:D35", "green", [ "v0" ] ],
+    [ "led_dry:A", "esp:D13", "red", [ "v0" ] ],
+    [ "led_dry:C", "r1:1", "red", [ "v0" ] ],
+    [ "r1:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led_optimal:A", "esp:D12", "orange", [ "v0" ] ],
+    [ "led_optimal:C", "r2:1", "orange", [ "v0" ] ],
+    [ "r2:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led_wet:A", "esp:D14", "green", [ "v0" ] ],
+    [ "led_wet:C", "r3:1", "green", [ "v0" ] ],
+    [ "r3:2", "esp:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
