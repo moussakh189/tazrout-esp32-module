@@ -6,104 +6,85 @@
     {
       "type": "wokwi-esp32-devkit-v1",
       "id": "esp",
-      "top": 0,
-      "left": 0,
+      "top": 129.5,
+      "left": 465.4,
       "attrs": {}
     },
     {
       "type": "wokwi-potentiometer",
       "id": "moisture",
-      "top": -96,
-      "left": 192,
-      "attrs": {
-        "value": "50"
-      }
+      "top": -160,
+      "left": -120,
+      "attrs": { "value": "50" }
     },
     {
       "type": "wokwi-dht22",
       "id": "dht",
-      "top": -36,
-      "left": 288,
-      "attrs": {
-        "temperature": "24",
-        "humidity": "60"
-      }
+      "top": -249.3,
+      "left": 138.6,
+      "attrs": { "temperature": "24", "humidity": "60" }
     },
     {
       "type": "wokwi-led",
       "id": "led_dry",
-      "top": 48,
-      "left": 192,
-      "attrs": {
-        "color": "red"
-      }
+      "top": 160,
+      "left": -120,
+      "attrs": { "color": "red" }
     },
     {
       "type": "wokwi-led",
       "id": "led_optimal",
-      "top": 86.4,
-      "left": 192,
-      "attrs": {
-        "color": "yellow"
-      }
+      "top": 159.6,
+      "left": -5.8,
+      "attrs": { "color": "yellow" }
     },
     {
       "type": "wokwi-led",
       "id": "led_wet",
-      "top": 124.8,
-      "left": 192,
-      "attrs": {
-        "color": "green"
-      }
+      "top": 160,
+      "left": 120,
+      "attrs": { "color": "green" }
     },
     {
       "type": "wokwi-resistor",
       "id": "r1",
-      "top": 106.75,
-      "left": 153.6,
-      "attrs": {
-        "value": "220"
-      }
+      "top": 200,
+      "left": -120,
+      "attrs": { "value": "220" }
     },
     {
       "type": "wokwi-resistor",
       "id": "r2",
-      "top": 145.35,
-      "left": 153.6,
-      "attrs": {
-        "value": "220"
-      }
+      "top": 200,
+      "left": 0,
+      "attrs": { "value": "220" }
     },
     {
       "type": "wokwi-resistor",
       "id": "r3",
-      "top": 183.95,
-      "left": 153.6,
-      "attrs": {
-        "value": "220"
-      }
+      "top": 200,
+      "left": 120,
+      "attrs": { "value": "220" }
     }
   ],
   "connections": [
-    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
-    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
-    [ "moisture:VCC", "esp:3V3", "red", [ "v0" ] ],
-    [ "moisture:GND", "esp:GND.1", "black", [ "v0" ] ],
-    [ "moisture:SIG", "esp:D35", "green", [ "v0" ] ],
-    [ "dht:VCC", "esp:3V3", "red", [ "v0" ] ],
-    [ "dht:GND", "esp:GND.1", "black", [ "v0" ] ],
-    [ "dht:SDA", "esp:D16", "blue", [ "v0" ] ],
-    [ "led_dry:A", "esp:D13", "red", [ "v0" ] ],
-    [ "led_dry:C", "r1:1", "red", [ "v0" ] ],
-    [ "r1:2", "esp:GND.2", "black", [ "v0" ] ],
-    [ "led_optimal:A", "esp:D12", "orange", [ "v0" ] ],
-    [ "led_optimal:C", "r2:1", "orange", [ "v0" ] ],
-    [ "r2:2", "esp:GND.2", "black", [ "v0" ] ],
-    [ "led_wet:A", "esp:D14", "green", [ "v0" ] ],
-    [ "led_wet:C", "r3:1", "green", [ "v0" ] ],
-    [ "r3:2", "esp:GND.2", "black", [ "v0" ] ]
+    ["esp:TX0", "$serialMonitor:RX", "", []],
+    ["esp:RX0", "$serialMonitor:TX", "", []],
+    ["moisture:VCC", "esp:3V3", "red", []],
+    ["moisture:GND", "esp:GND.1", "black", []],
+    ["moisture:SIG", "esp:D35", "green", []],
+    ["dht:VCC", "esp:3V3", "red", []],
+    ["dht:GND", "esp:GND.1", "black", []],
+    ["dht:SDA", "esp:D4", "blue", []],
+    ["led_dry:A", "esp:D13", "red", []],
+    ["led_dry:C", "r1:1", "red", []],
+    ["r1:2", "esp:GND.2", "black", []],
+    ["led_optimal:A", "esp:D12", "orange", []],
+    ["led_optimal:C", "r2:1", "orange", []],
+    ["r2:2", "esp:GND.2", "black", []],
+    ["led_wet:A", "esp:D14", "green", []],
+    ["led_wet:C", "r3:1", "green", []],
+    ["r3:2", "esp:GND.2", "black", []]
   ],
-  "dependencies": {
-    "DHT sensor library": "1.4.4"
-  }
+  "dependencies": {}
 }
