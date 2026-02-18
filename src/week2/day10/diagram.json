@@ -85,25 +85,23 @@
     }
   ],
   "connections": [
-    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
-    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
-    [ "moisture:VCC", "esp:3V3", "red", [ "v0" ] ],
-    [ "moisture:GND", "esp:GND.1", "black", [ "v0" ] ],
-    [ "moisture:SIG", "esp:D35", "green", [ "v0" ] ],
-    [ "dht:VCC", "esp:3V3", "red", [ "v0" ] ],
-    [ "dht:GND", "esp:GND.1", "black", [ "v0" ] ],
-    [ "dht:SDA", "esp:D16", "blue", [ "v0" ] ],
-    [ "led_dry:A", "esp:D13", "red", [ "v0" ] ],
-    [ "led_dry:C", "r1:1", "red", [ "v0" ] ],
-    [ "r1:2", "esp:GND.2", "black", [ "v0" ] ],
-    [ "led_optimal:A", "esp:D12", "orange", [ "v0" ] ],
-    [ "led_optimal:C", "r2:1", "orange", [ "v0" ] ],
-    [ "r2:2", "esp:GND.2", "black", [ "v0" ] ],
-    [ "led_wet:A", "esp:D14", "green", [ "v0" ] ],
-    [ "led_wet:C", "r3:1", "green", [ "v0" ] ],
-    [ "r3:2", "esp:GND.2", "black", [ "v0" ] ]
+    ["esp:TX0", "$serialMonitor:RX", "", []],
+    ["esp:RX0", "$serialMonitor:TX", "", []],
+    ["moisture:VCC", "esp:3V3", "red", ["v0"]],
+    ["moisture:GND", "esp:GND.1", "black", ["v0"]],
+    ["moisture:SIG", "esp:D35", "green", ["v0"]],
+    ["dht:VCC", "esp:3V3", "red", ["v0"]],
+    ["dht:GND", "esp:GND.1", "black", ["v0"]],
+    ["dht:SDA", "esp:D4", "blue", ["v0"]],
+    ["led_dry:A", "esp:D13", "red", ["v0"]],
+    ["led_dry:C", "r1:1", "red", ["v0"]],
+    ["r1:2", "esp:GND.2", "black", ["v0"]],
+    ["led_optimal:A", "esp:D12", "orange", ["v0"]],
+    ["led_optimal:C", "r2:1", "orange", ["v0"]],
+    ["r2:2", "esp:GND.2", "black", ["v0"]],
+    ["led_wet:A", "esp:D14", "green", ["v0"]],
+    ["led_wet:C", "r3:1", "green", ["v0"]],
+    ["r3:2", "esp:GND.2", "black", ["v0"]]
   ],
-  "dependencies": {
-    "DHT sensor library": "1.4.4"
-  }
+  "dependencies": {}
 }
