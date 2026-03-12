@@ -42,7 +42,7 @@ Quick Start
 
 - **Week 1:** ESP32 Fundamentals
 - **Week 2:** Sensor Integration
-- **Week 3:** WiFi & MQTT Publishing
+- **Week 3:** LO-RA & MQTT Publishing
 - **Week 4:** Bidirectional Communication
 - **Week 5:** Relay Control
 - **Week 6:** Error Handling
