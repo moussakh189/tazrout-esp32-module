@@ -119,9 +119,9 @@ tazrout-esp32-module/
 ## Documentation
 
 - [Development Plan](docs/TAZROUT-ESP32-Development_Plan.pdf)
-- [Progress Tracker](PROGRESS.md)
-- [Hardware Test Guide](guides/TAZROUT_HardwareTestGuide.md)
-- [Simulation Guide](guides/TAZROUT_SimulationGuide.md)
+- [Progress Tracker](docs/PROGRESS.md)
+- [Hardware Test Guide](docs/guides/TAZROUT_HardwareTestGuide.md)
+- [Simulation Guide](docs/guides/TAZROUT_SimulationGuide.md)
 - API Documentation — coming in Week 5
 
 ---
