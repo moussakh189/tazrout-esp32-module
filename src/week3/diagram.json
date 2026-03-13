@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "author": "KHENFRI Moussa - TAZROUT Project v4",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 180,
+      "left": 340,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_moisture",
+      "top": -200,
+      "left": -220,
+      "attrs": { "value": "50" },
+      "label": "POT-A: SOIL MOISTURE (left=dry, right=wet)"
+    },
+
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_water",
+      "top": -200,
+      "left": 40,
+      "attrs": { "value": "80" },
+      "label": "POT-B: WATER TANK LEVEL (left=empty, right=full)"
+    },
+
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -300,
+      "left": 260,
+      "attrs": { "temperature": "24", "humidity": "60" }
+    },
+
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 80,
+      "left": 700,
+      "attrs": {},
+      "label": "VALVE RELAY (GPIO 26)"
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "led_dry",
+      "top": 240,
+      "left": -240,
+      "attrs": { "color": "red" },
+      "label": "DRY"
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_optimal",
+      "top": 240,
+      "left": -160,
+      "attrs": { "color": "yellow" },
+      "label": "OPTIMAL"
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_wet",
+      "top": 240,
+      "left": -80,
+      "attrs": { "color": "green" },
+      "label": "WET"
+    },
+
+    {
+      "type": "wokwi-resistor",
+      "id": "r_dry",
+      "top": 300,
+      "left": -240,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_optimal",
+      "top": 300,
+      "left": -160,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_wet",
+      "top": 300,
+      "left": -80,
+      "attrs": { "value": "220" }
+    }
+  ],
+
+  "connections": [
+    ["esp:TX0", "$serialMonitor:RX", "", []],
+    ["esp:RX0", "$serialMonitor:TX", "", []],
+
+    ["pot_moisture:VCC", "esp:3V3",   "red",    []],
+    ["pot_moisture:GND", "esp:GND.1", "black",  []],
+    ["pot_moisture:SIG", "esp:D35",   "green",  []],
+
+    ["pot_water:VCC",    "esp:3V3",   "red",    []],
+    ["pot_water:GND",    "esp:GND.1", "black",  []],
+    ["pot_water:SIG",    "esp:D34",   "purple", []],
+
+    ["dht:VCC", "esp:3V3",   "red",   []],
+    ["dht:GND", "esp:GND.1", "black", []],
+    ["dht:SDA", "esp:D4",    "blue",  []],
+
+    ["relay:VCC", "esp:5V",   "red",    []],
+    ["relay:GND", "esp:GND.2","black",  []],
+    ["relay:IN",  "esp:D26",  "orange", []],
+
+    ["led_dry:A",     "esp:D13",    "red",    []],
+    ["led_dry:C",     "r_dry:1",    "red",    []],
+    ["r_dry:2",       "esp:GND.2",  "black",  []],
+
+    ["led_optimal:A", "esp:D12",    "orange", []],
+    ["led_optimal:C", "r_optimal:1","orange", []],
+    ["r_optimal:2",   "esp:GND.2",  "black",  []],
+
+    ["led_wet:A",     "esp:D14",    "green",  []],
+    ["led_wet:C",     "r_wet:1",    "green",  []],
+    ["r_wet:2",       "esp:GND.2",  "black",  []]
+  ],
+
+  "dependencies": {}
+}
